@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+  <!-- Urban passenger car profile (baseline) -->
+  <vType id="car" vClass="passenger" accel="1.5" decel="3.0" length="4.5"
+         minGap="2.5" maxSpeed="13.9" carFollowModel="Krauss" sigma="0.5"/>
+
+  <!-- Routes across the 4-way intersection (use your existing edge IDs) -->
+  <!-- These route IDs match your current route_junction.rou.xml -->
+  <route id="r_L_R" edges="E#L-X E#X-R"/>
+  <route id="r_R_L" edges="E#R-X E#X-L"/>
+  <route id="r_T_D" edges="E#T-X E#X-D"/>
+  <route id="r_D_T" edges="E#D-X E#X-T"/>
+
+  <!-- LOW density preset: begin=0, end=75 s; period=10s (~360 veh/h per lane) -->
+  <!-- One flow per lane (0,1,2) for each approach/direction -->
+  <!-- To add turns, duplicate a few flows and switch the route attribute to r_L_T, r_R_D, r_T_R, r_D_L etc. -->
+    <flow id="L0" type="car" route="r_L_R" begin="0" end="75" period="10" departLane="0" departPos="base" departSpeed="max"/>
+  <flow id="L1" type="car" route="r_L_R" begin="0" end="75" period="10" departLane="1" departPos="base" departSpeed="max"/>
+  <flow id="L2" type="car" route="r_L_R" begin="0" end="75" period="10" departLane="2" departPos="base" departSpeed="max"/>
+
+  <flow id="R0" type="car" route="r_R_L" begin="0" end="75" period="10" departLane="0" departPos="base" departSpeed="max"/>
+  <flow id="R1" type="car" route="r_R_L" begin="0" end="75" period="10" departLane="1" departPos="base" departSpeed="max"/>
+  <flow id="R2" type="car" route="r_R_L" begin="0" end="75" period="10" departLane="2" departPos="base" departSpeed="max"/>
+
+  <flow id="T0" type="car" route="r_T_D" begin="0" end="75" period="10" departLane="0" departPos="base" departSpeed="max"/>
+  <flow id="T1" type="car" route="r_T_D" begin="0" end="75" period="10" departLane="1" departPos="base" departSpeed="max"/>
+  <flow id="T2" type="car" route="r_T_D" begin="0" end="75" period="10" departLane="2" departPos="base" departSpeed="max"/>
+
+  <flow id="D0" type="car" route="r_D_T" begin="0" end="75" period="10" departLane="0" departPos="base" departSpeed="max"/>
+  <flow id="D1" type="car" route="r_D_T" begin="0" end="75" period="10" departLane="1" departPos="base" departSpeed="max"/>
+  <flow id="D2" type="car" route="r_D_T" begin="0" end="75" period="10" departLane="2" departPos="base" departSpeed="max"/>
+</routes>

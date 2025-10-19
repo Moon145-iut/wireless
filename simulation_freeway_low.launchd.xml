@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Files to copy into a temp dir for SUMO -->
+  <copy file="1000m_3lanes_freeway.net.xml"/>
+  <copy file="route_freeway_low.rou.xml"/>
+  <copy file="freeway_low.sumo.cfg" type="config"/>
+
+  <!-- Optional but handy if files live next to this XML -->
+  <basedir path="./"/>
+
+  <!-- Seed used by veins_launchd for SUMO's RNG (OMNeT++ seed stays in omnetpp.ini) -->
+  <seed value="210041143"/>
+</launch>
